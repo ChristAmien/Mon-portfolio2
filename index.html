@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    
+    <link rel="shortcut icon" href="image/logo_amien.png" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/respon.css">
 </head>
 
 <body>
@@ -30,6 +32,38 @@
                 </ul>
             </div>
         </nav>
+
+        <nav id="nav-hamburger">
+            <div class="logo-amien">
+                <img src="image/logo_amien.png" alt="logo-amien" class="logo-amien1">
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li>
+                            <a href="#acceuil" onclick="toggleMenu()">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="#apropos" onclick="toggleMenu()">A propos</a>
+                        </li>
+                        <li>
+                            <a href="#Competences" onclick="toggleMenu()">Projets</a>
+                        </li>
+                        <li>
+                            <a href="#projects" onclick="toggleMenu()">Competences</a>
+                        </li>
+                        <li>
+                            <a href="#Contacts" onclick="toggleMenu()">Rendez-vous</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -46,7 +80,7 @@
                         <span class="dev-text">DEV</span>
                     </div>
                     <div class="hero-buttons">
-                        <a href="#" class="btn-github">GITHUB <span><i class="fa-brands fa-github"></i></span></a>
+                        <a href="https://github.com/ChristAmien" class="btn-github">esGITHUB <span><i class="fa-brands fa-github"></i></span></a>
                         <a href="image/Doc2.pdf" class="btn-cv">TÉLÉCHARGER CV <i
                                 class="fa-solid fa-download download-icon"></i></a>
                     </div>
@@ -166,6 +200,8 @@
 
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

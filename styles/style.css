@@ -1,0 +1,456 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mes putains de Variables */
+:root {
+    --premiere-color: #2E2D2D;
+    --deuxieme-color: #000000;
+    --troisieme-color: #474747;
+    --quatrieme-color: #BD1515;
+    --cinquieme-color: #ffffff;
+    --sixieme-color: #1E1E1E;
+}
+
+/* Body */
+body {
+    font-family: "Bebas Neue", sans-serif;
+    background-color: var(--deuxieme-color);
+    text-align: center;
+    color: var(--cinquieme-color);
+}
+
+/* Header */
+header {
+    background-color: var(--premiere-color);
+    padding: 10px 0;
+}
+
+/* naviga */
+.desktop-nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo amien */
+.logo-amien {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Nav Links */
+.nav-link {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-link li {
+    position: relative;
+}
+
+.nav-link li {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Ligne rouge au hover */
+.nav-link li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--quatrieme-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link li:hover::after {
+    width: 100%;
+}
+
+.nav-link li:hover {
+    color: #fff;
+}
+
+
+/* menu hamburger */
+
+#nav-hamburger{
+    display: none;
+    justify-content: space-around;
+}
+
+#nav-hamburger .hamburger-menu .menu-links #theme-toggle{
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease
+}
+
+#nav-hamburger .hamburger-menu .menu-links #theme-toggle:hover{
+    transform: scale(1.2);
+}
+
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span{
+    width: 100%;
+    height: 2px;
+    background-color: var(--cinquieme-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-links ul li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px,5px);
+}
+
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px,-5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+/* ======ACCEUIL====== */
+
+.acceuil-section {
+    color: white;
+    text-align: center;
+}
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 50px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.dev-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.code-icon {
+    color: var(--quatrieme-color);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dev-text {
+    color: var(--quatrieme-color);
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-bottom: 3px solid var(--quatrieme-color);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.btn-github {
+    padding: 12px 30px;
+    border: 2px solid var(--quatrieme-color);
+    background-color: transparent;
+    color: var(--cinquieme-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-github:hover {
+    background-color: var(--quatrieme-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cv {
+    padding: 12px 30px;
+    border: 2px solid var(--troisieme-color);
+    background-color: var(--sixieme-color);
+    color: var(--cinquieme-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fa-github {
+    color: var(--cinquieme-color);
+    font-size: 20px;
+}
+
+
+
+.btn-cv:hover {
+    background: var(--deuxieme-color);
+    transform: translateY(-2px)
+}
+
+.photo-amien {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* =======A PROPOS====== */
+
+.about-section,
+.projets-section {
+    padding: 80px 0;
+    background-color: var(--sixieme-color);
+}
+
+.text-title {
+    margin-top: 20px;
+    border-bottom: 5px solid var(--quatrieme-color);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.about-container {
+    gap: 20px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.photo2-amien {
+    border-radius: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+.para-text {
+    font-family: 'Roboto Mono';
+    font-optical-sizing: auto;
+    font-weight: regular;
+    font-style: normal;
+    margin-bottom: 40px;
+}
+
+/* statistique */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Roboto Mono';
+    font-size: 22px;
+    font-weight: regular;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-family: 'Roboto Mono';
+    font-size: 16px;
+    color: var(--troisieme-color);
+    text-transform: capitalize;
+}
+
+/* =======PROJETS========= */
+
+.project-card {
+    background:var(--premiere-color);
+    border-radius: 15px;
+    padding: 50px;
+    width: 90%;
+    margin:auto;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.project-title-wrapper {
+    min-width: 250px;
+}
+
+.project-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.project-title .highlight {
+    color: var(--quatrieme-color);
+}
+
+.project-badge {
+    font-family: 'Roboto Mono';
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: var(--quatrieme-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.project-date {
+    color: var(--troisieme-color);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.project-description {
+    font-family: 'Roboto Mono';
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--cinquieme-color);
+    margin-bottom: 40px;
+    max-width: 900px;
+}
+
+.project-category {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-category h3 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
