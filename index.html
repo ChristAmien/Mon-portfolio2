@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    
+
     <link rel="shortcut icon" href="image/logo_amien.png" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,12 +24,13 @@
             </div>
             <div class="nav-links">
                 <ul class="nav-link">
-                    <li>Acceuil</li>
-                    <li>A propos</li>
-                    <li>Projets</li>
-                    <li>Competences</li>
-                    <li>Rendez-vous</li>
+                    <li><a href="#acceuil">Accueil</a></li>
+                    <li><a href="#apropos">A propos</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#competences">Competences</a></li>
+                    <li><a href="#contacts">Rendez-vous</a></li>
                 </ul>
+
             </div>
         </nav>
 
@@ -52,13 +53,13 @@
                             <a href="#apropos" onclick="toggleMenu()">A propos</a>
                         </li>
                         <li>
-                            <a href="#Competences" onclick="toggleMenu()">Projets</a>
+                            <a href="#competences" onclick="toggleMenu()">Projets</a>
                         </li>
                         <li>
                             <a href="#projects" onclick="toggleMenu()">Competences</a>
                         </li>
                         <li>
-                            <a href="#Contacts" onclick="toggleMenu()">Rendez-vous</a>
+                            <a href="#rendez-vous" onclick="toggleMenu()">Rendez-vous</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +69,7 @@
 
     <main>
         <!-- Acceuil -->
-        <section class="hero">
+        <section class="hero" id="acceuil">
             <div class="hero-content">
                 <div class="profile-circle">
                     <img src="image/Denji.jpeg" alt="" class="photo-amien">
@@ -80,7 +81,8 @@
                         <span class="dev-text">DEV</span>
                     </div>
                     <div class="hero-buttons">
-                        <a href="https://github.com/ChristAmien" class="btn-github">esGITHUB <span><i class="fa-brands fa-github"></i></span></a>
+                        <a href="https://github.com/ChristAmien" class="btn-github">GITHUB <span><i
+                                    class="fa-brands fa-github"></i></span></a>
                         <a href="image/Doc2.pdf" class="btn-cv">TÉLÉCHARGER CV <i
                                 class="fa-solid fa-download download-icon"></i></a>
                     </div>
@@ -89,7 +91,7 @@
         </section>
 
         <!-- A propos -->
-        <h1 class="text-title">
+        <h1 class="text-title" id="apropos">
             A propos
         </h1>
         <section class="about-section">
@@ -124,7 +126,7 @@
             </div>
         </section>
 
-        <h1 class="text-title">Projets</h1>
+        <h1 class="text-title" id="projects">Projets</h1>
 
         <section class="projets-section">
             <div class="project-container">
@@ -154,11 +156,11 @@
                     </div>
 
                     <div class="project-buttons">
-                        <a href="#" class="btn-github">
+                        <a href="https://github.com/ChristAmien" class="btn2-github">
                             CODE
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="#" class="btn-cv">
+                        <a href="#" class="btn2-cv">
                             VOIR
                             <span class="arrow-icon">↗</span>
                         </a>
@@ -185,11 +187,11 @@
                     </div>
 
                     <div class="project-buttons">
-                        <a href="#" class="btn-github">
+                        <a href="https://github.com/ChristAmien" class="btn2-github">
                             CODE
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="#" class="btn-cv">
+                        <a href="#" class="btn2-cv">
                             VOIR
                             <span class="arrow-icon">↗</span>
                         </a>
@@ -199,6 +201,74 @@
 
 
         </section>
+
+        <h1 class="text-title" id="competences">Compétences</h1>
+        <section class="competence-section" id="competences">
+
+            <div class="competence-container">
+
+                <!-- PHP -->
+                <div class="skill-card">
+                    <i class="fa-brands fa-php skill-icon"></i>
+                    <div class="skill-percent">30%</div>
+                    <div class="skill-name">PHP</div>
+                </div>
+
+                <!-- JAVA -->
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                        class="skill-icon skill-java">
+                    <div class="skill-percent">22%</div>
+                    <div class="skill-name">JAVA</div>
+                </div>
+
+                <!-- JAVASCRIPT -->
+                <div class="skill-card">
+                    <i class="fa-brands fa-js skill-icon"></i>
+                    <div class="skill-percent">67%</div>
+                    <div class="skill-name">JAVASCRIPT</div>
+                </div>
+
+                <!-- HTML -->
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5 skill-icon"></i>
+                    <div class="skill-percent">80%</div>
+                    <div class="skill-name">HTML</div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card">
+                    <i class="fa-brands fa-css3-alt skill-icon"></i>
+                    <div class="skill-percent">67%</div>
+                    <div class="skill-name">CSS</div>
+                </div>
+
+                <!-- BOOTSTRAP -->
+                <div class="skill-card">
+                    <i class="fa-brands fa-bootstrap skill-icon"></i>
+                    <div class="skill-percent">12%</div>
+                    <div class="skill-name">BOOTSTRAP</div>
+                </div>
+
+                <!-- PYTHON -->
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        alt="Python" class="skill-icon skill-python">
+
+                    <div class="skill-percent">35%</div>
+                    <div class="skill-name">PYTHON</div>
+                </div>
+
+                <!-- MYSQL -->
+                <div class="skill-card">
+                    <i class="fa-solid fa-database skill-icon"></i>
+                    <div class="skill-percent">42%</div>
+                    <div class="skill-name">MYSQL</div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <script src="script.js"></script>
