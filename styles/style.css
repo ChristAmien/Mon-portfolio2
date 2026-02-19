@@ -633,7 +633,7 @@ header {
 .skill-card:hover .skill-java {
     opacity: 1;
     transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(234,45,46,0.6));
+    filter: drop-shadow(0 0 10px rgba(234, 45, 46, 0.6));
 }
 
 
@@ -667,7 +667,7 @@ header {
 .skill-card:hover .skill-python {
     opacity: 1;
     transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(55,118,171,0.6));
+    filter: drop-shadow(0 0 10px rgba(55, 118, 171, 0.6));
 }
 
 
@@ -677,7 +677,7 @@ header {
 
 /* RDV */
 
-.rdv-section{
+.rdv-section {
     background: var(--sixieme-color);
     width: 100%;
     padding: 40px 20px;
@@ -686,7 +686,7 @@ header {
     margin-bottom: 40px;
 }
 
-.rdv-container{
+.rdv-container {
     background: var(--troisieme-color);
     width: 100%;
     padding: 40px;
@@ -711,17 +711,17 @@ header {
 }
 
 
-.form1{
+.form1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
 }
 
-.btn{
-    padding: 18px ;
+.btn {
+    padding: 18px;
     border: none;
-    
+
     background: var(--deuxieme-color);
     color: var(--cinquieme-color);
     font-weight: bold;
@@ -729,20 +729,20 @@ header {
     transition: 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--cinquieme-color);
     transform: translateY(-2px);
     color: var(--premiere-color);
 }
 
-#formMessage{
+#formMessage {
     margin-top: 15px;
     display: none;
 }
 
 /* ========FOOTER======= */
 
-.footer-content{
+.footer-content {
     background-color: var(--premiere-color);
     display: flex;
     flex-direction: row-reverse;
@@ -753,16 +753,16 @@ header {
     padding: 34px 26px;
 }
 
-.section-logo{
+.section-logo {
     background-color: var(--premiere-color);
 }
 
-.social-icons{
+.social-icons {
     display: flex;
     gap: 20px;
 }
 
-.copyright{
+.copyright {
     font-size: 24px;
 }
 
@@ -780,8 +780,37 @@ header {
     text-decoration: none;
 }
 
-.logo-amien1{
+.logo-amien1 {
     width: 80px;
     height: 80px;
     object-fit: contain;
 }
+
+.social-icons a:hover {
+    transform: scale(1.1);
+
+}
+
+.social-icons a:nth-child(1):hover {
+    background-color: #1877F2;
+}
+
+.social-icons a:nth-child(2):hover {
+    background-color: #E4405F;
+}
+
+.social-icons a:nth-child(4):hover {
+    background-color: #0d3bf0;
+}
+
+.social-icons a:nth-child(3):hover {
+    background-color: var(--sixieme-color);
+    color: #fff;
+}
+
+.social-icons a:nth-child(5):hover {
+    background-color: var(--sixieme-color);
+    color: #fff;
+}
+
+
