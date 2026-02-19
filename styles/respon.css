@@ -1,4 +1,5 @@
-@media screen and (max-width:1200px)  {
+@media screen and (max-width: 1024px) {
+    /* Hero Section */
     .desktop-nav{
         display: none;
     }
@@ -6,9 +7,408 @@
         display: flex;
     }
 
-    .logo-amien1{
+    .logo-amien{
         width: 50px;
         height: 50px;
     }
 
+    .hero-content {
+        gap: 50px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .dev-text {
+        font-size: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-github,
+    .btn-cv {
+        width: 100%;
+    }
+
+    .photo-amien {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 30px;
+        gap: 30px;
+    }
+
+    .photo2-amien {
+        width: 150px;
+        height: 150px;
+    }
+
+    .para-text {
+        font-size: 14px;
+    }
+
+    .stats {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    /* Projects Section */
+    .project-card {
+        padding: 40px;
+        width: 95%;
+    }
+
+    .project-title {
+        font-size: 36px;
+    }
+
+    .project-badge {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    .project-date {
+        font-size: 14px;
+    }
+
+    .project-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .project-category h3 {
+        font-size: 24px;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn2-github,
+    .btn2-cv {
+        width: 100%;
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
+    /* Competences Section */
+    .competence-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 25px;
+    }
+
+    .skill-card {
+        width: 120px;
+        height: 140px;
+    }
+
+    .skill-icon {
+        font-size: 36px;
+    }
+
+    .skill-java,
+    .skill-python {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-percent {
+        font-size: 1.2rem;
+    }
+
+    .skill-name {
+        font-size: 0.7rem;
+    }
+
+    /* Contact Section */
+    .rdv-container {
+        padding: 30px 20px;
+    }
+
+    .form1 input,
+    .form1 textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 0;
+    }
+}
+
+/* ================== MOBILES (max-width: 768px) ================== */
+@media screen and (max-width: 768px) {
+    /* Hero */
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .dev-text {
+        font-size: 24px;
+    }
+
+    .code-icon {
+        font-size: 24px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    /* About Section */
+    .about-container {
+        padding: 0 20px;
+    }
+
+    .photo2-amien {
+        width: 130px;
+        height: 130px;
+    }
+
+    .para-text {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 18px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    /* Projects Section */
+    .project-card {
+        padding: 30px 15px;
+        width: 95%;
+    }
+
+    .project-title {
+        font-size: 32px;
+    }
+
+    .project-description {
+        font-size: 13px;
+    }
+
+    .project-category h3 {
+        font-size: 20px;
+    }
+
+    .btn2-github,
+    .btn2-cv {
+        font-size: 16px;
+        padding: 12px 15px;
+        width: 100%;
+    }
+
+    /* Competences Section */
+    .competence-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .skill-card {
+        width: 100%;
+        height: 120px;
+    }
+
+    .skill-icon {
+        font-size: 32px;
+    }
+
+    .skill-java,
+    .skill-python {
+        width: 36px;
+        height: 36px;
+    }
+
+    .skill-percent {
+        font-size: 1.1rem;
+    }
+
+    .skill-name {
+        font-size: 0.65rem;
+    }
+
+    /* Contact Section */
+    .rdv-container {
+        padding: 25px 15px;
+    }
+
+    .form1 input,
+    .form1 textarea {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px 0;
+        width: 100%;
+    }
+}
+
+/* ================== PETITS MOBILES (max-width: 480px) ================== */
+@media screen and (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .dev-text {
+        font-size: 20px;
+    }
+
+    .code-icon {
+        font-size: 20px;
+    }
+
+    .photo-amien {
+        width: 150px;
+        height: 150px;
+    }
+
+    .photo2-amien {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-title {
+        font-size: 28px;
+    }
+
+    .project-description {
+        font-size: 12px;
+    }
+
+    .btn2-github,
+    .btn2-cv {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .skill-card {
+        height: 110px;
+    }
+
+    .skill-icon {
+        font-size: 28px;
+    }
+
+    .skill-java,
+    .skill-python {
+        width: 32px;
+        height: 32px;
+    }
+
+    .skill-percent {
+        font-size: 1rem;
+    }
+
+    .skill-name {
+        font-size: 0.6rem;
+    }
+}
+
+/* ================== TRÈS PETITS MOBILES (max-width: 360px) ================== */
+@media screen and (max-width: 360px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .dev-text {
+        font-size: 18px;
+    }
+
+    .photo-amien {
+        width: 130px;
+        height: 130px;
+    }
+
+    .photo2-amien {
+        width: 110px;
+        height: 110px;
+    }
+
+    .project-title {
+        font-size: 24px;
+    }
+
+    .project-description {
+        font-size: 11px;
+    }
+
+    .btn2-github,
+    .btn2-cv {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .skill-card {
+        height: 100px;
+    }
+
+    .skill-icon {
+        font-size: 26px;
+    }
+
+    .skill-java,
+    .skill-python {
+        width: 30px;
+        height: 30px;
+    }
+
+    .skill-percent {
+        font-size: 0.9rem;
+    }
+
+    .skill-name {
+        font-size: 0.55rem;
+    }
+
+    .rdv-container {
+        padding: 15px 10px;
+    }
+
+    .form1 input,
+    .form1 textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 10px 0;
+    }
 }

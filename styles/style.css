@@ -35,6 +35,8 @@ body {
 header {
     background-color: var(--premiere-color);
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
 }
 
 /* naviga */
@@ -71,7 +73,7 @@ header {
 }
 
 .nav-link li {
-    color: #fff;
+    color: var(--cinquieme-color);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -671,4 +673,66 @@ header {
 
 .skill-card:hover .fa-database {
     text-shadow: 0 0 12px #00758f;
+}
+
+.rdv-section{
+    background: var(--sixieme-color);
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.rdv-container{
+    background: var(--troisieme-color);
+    width: 100%;
+    padding: 40px;
+    border-radius: 23px;
+}
+
+.form1 input,
+.form1 textarea {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    color: var(--cinquieme-color);
+    background: var(--premiere-color);
+    outline: none;
+    font-family: 'Roboto Mono';
+    width: 100%;
+}
+
+.form1 textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+.form1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn{
+    padding: 18px ;
+    border: none;
+    
+    background: var(--deuxieme-color);
+    color: var(--cinquieme-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    background: var(--cinquieme-color);
+    transform: translateY(-2px);
+    color: var(--premiere-color);
+}
+
+#formMessage{
+    margin-top: 15px;
+    display: none;
 }

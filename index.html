@@ -36,7 +36,7 @@
 
         <nav id="nav-hamburger">
             <div class="logo-amien">
-                <img src="image/logo_amien.png" alt="logo-amien" class="logo-amien1">
+                <img src="image/logo_amien.png" alt="logo-amien" class="logo-amien">
             </div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
@@ -53,13 +53,13 @@
                             <a href="#apropos" onclick="toggleMenu()">A propos</a>
                         </li>
                         <li>
-                            <a href="#competences" onclick="toggleMenu()">Projets</a>
+                            <a href="#projects" onclick="toggleMenu()">Projets</a>
                         </li>
                         <li>
-                            <a href="#projects" onclick="toggleMenu()">Competences</a>
+                            <a href="#competences" onclick="toggleMenu()">Competences</a>
                         </li>
                         <li>
-                            <a href="#rendez-vous" onclick="toggleMenu()">Rendez-vous</a>
+                            <a href="#contacts" onclick="toggleMenu()">Rendez-vous</a>
                         </li>
                     </ul>
                 </div>
@@ -126,8 +126,8 @@
             </div>
         </section>
 
+        <!-- projets -->
         <h1 class="text-title" id="projects">Projets</h1>
-
         <section class="projets-section">
             <div class="project-container">
                 <div class="project-card">
@@ -202,6 +202,7 @@
 
         </section>
 
+        <!-- competences -->
         <h1 class="text-title" id="competences">Compétences</h1>
         <section class="competence-section" id="competences">
 
@@ -266,9 +267,35 @@
                     <div class="skill-name">MYSQL</div>
                 </div>
 
+                <div class="skill-card">
+                    <i class="fa-brands fa-github skill-icon"></i>
+                    <div class="skill-percent">35%</div>
+                    <div class="skill-name">GitHub</div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-git-alt skill-icon"></i>
+                    <div class="skill-percent">40%</div>
+                    <div class="skill-name">GIT</div>
+                </div>
             </div>
         </section>
 
+        <!-- rendez-vous -->
+        <h1 class="text-title" id="contacts">Rendez-vous</h1>
+        <section class="rdv-section">
+            <div class="rdv-container">
+                <form class="form1" method="post" action="">
+                    <input type="text" placeholder="Nom/Prenom" required name="Nom">
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="text" placeholder="sujet" name="sujet">
+                    <textarea name="description" id="description" placeholder="description de votre sujet" name="Message"></textarea>
+                    <button type="submit" name="btn-envoyer" class="btn">Envoyer</button>
+                </form>
+
+                <p id="formMessage"></p>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
