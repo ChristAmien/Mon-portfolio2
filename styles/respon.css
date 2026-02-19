@@ -195,7 +195,7 @@
     }
 
     .stats {
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
     }
 
@@ -410,5 +410,90 @@
     .btn {
         font-size: 12px;
         padding: 10px 0;
+    }
+}
+
+footer {
+    background-color: var(--premiere-color);
+}
+
+/* CONTAINER PRINCIPAL */
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+    padding: 34px 26px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.section-logo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.logo-amien1{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Réseaux */
+.social-icons{
+    display: flex;
+    gap: 20px;
+}
+
+/* Copyright */
+.copyright{
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Icônes */
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--deuxieme-color);
+    color: var(--cinquieme-color);
+    font-size: 18px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* VERSION MOBILE */
+
+@media screen and (max-width: 768px) {
+
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .social-icons{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .copyright{
+        font-size: 14px;
+    }
+
+    .logo-amien1{
+        width: 60px;
+        height: 60px;
     }
 }
