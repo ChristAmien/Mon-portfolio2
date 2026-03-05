@@ -1,0 +1,272 @@
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== VARIANTES DE DIRECTION ===== */
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== DÉLAIS ÉCHELONNÉS (stagger) ===== */
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* ===== TITRES DE SECTION ===== */
+
+.text-title {
+    opacity: 0;
+    transform: translateY(40px) scaleX(0.95);
+    transition: opacity 0.6s ease,
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-title.visible {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+}
+
+/* ===== HERO (animation au chargement) ===== */
+
+.profile-circle {
+    opacity: 0;
+    transform: scale(0.7) rotate(-8deg);
+    animation: heroImageIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+@keyframes heroImageIn {
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.hero-text h1 {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: heroTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+@keyframes heroTextIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.dev-badge {
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.65s forwards;
+}
+
+.hero-buttons {
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.85s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SECTION A PROPOS ===== */
+
+.profile-carre {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-3deg);
+    transition: opacity 0.7s ease,
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-carre.visible {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.text-description {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s ease 0.15s,
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.text-description.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stats individuel */
+
+.stat-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease,
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== CARTES PROJETS ===== */
+
+.project-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== SKILLS CARDS ===== */
+
+.skill-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: opacity 0.5s ease,
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.3s ease;
+}
+
+.skill-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Réappliquer le hover après visibilité */
+.skill-card.visible:hover {
+    transform: translateY(-8px);
+    background: #5a5a5a;
+}
+
+/* ===== FORMULAIRE RDV ===== */
+
+.rdv-container {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    transition: opacity 0.7s ease,
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rdv-container.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ===== FOOTER ===== */
+
+.footer-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease 0.1s,
+                transform 0.6s ease 0.1s;
+}
+
+.footer-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-logo {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease 0.3s,
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.section-logo.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== LIGNE ROUGE ANIMÉE sous les titres ===== */
+
+.text-title {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== RÉDUCTION MOTION (accessibilité) ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale,
+    .profile-circle,
+    .hero-text h1,
+    .dev-badge,
+    .hero-buttons,
+    .profile-carre,
+    .text-description,
+    .stat-item,
+    .project-card,
+    .skill-card,
+    .rdv-container,
+    .footer-content,
+    .section-logo,
+    .text-title {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,20 +1,74 @@
 @media screen and (max-width: 1024px) {
-    /* Hero Section */
-    .desktop-nav{
+
+    /* Cacher desktop nav */
+    .desktop-nav {
         display: none;
     }
-    #nav-hamburger{
+
+    /* Afficher hamburger */
+    #nav-hamburger {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* ✅ même z-index que le header */
+        z-index: 1000;
+        background-color: var(--premiere-color);
+        height: var(--nav-height);
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    /* Menu ouvert */
+    .menu-links {
+        position: fixed;
+        /* ✅ positionné sous la navbar */
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        transition: max-height 0.3s ease;
+    }
+
+    .menu-links.open {
+        max-height: 300px;
         display: flex;
     }
 
-    .logo-amien{
-        width: 50px;
-        height: 50px;
+    .menu-links ul {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
+    .menu-links li {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu-links a {
+        font-size: 18px;
+        text-decoration: none;
+        color: var(--deuxieme-color);
+        display: block;
+        width: 100%;
+    }
+
+    /* Hero */
     .hero-content {
         gap: 50px;
         flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
         text-align: center;
     }
 
@@ -26,14 +80,20 @@
         font-size: 28px;
     }
 
+    .dev-badge {
+        justify-content: center;
+    }
+
     .hero-buttons {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
     }
 
     .btn-github,
     .btn-cv {
         width: 100%;
+        justify-content: center;
     }
 
     .photo-amien {
@@ -65,15 +125,7 @@
         gap: 30px;
     }
 
-    .stat-number {
-        font-size: 20px;
-    }
-
-    .stat-label {
-        font-size: 14px;
-    }
-
-    /* Projects Section */
+    /* Projects */
     .project-card {
         padding: 40px;
         width: 95%;
@@ -81,24 +133,6 @@
 
     .project-title {
         font-size: 36px;
-    }
-
-    .project-badge {
-        font-size: 12px;
-        padding: 6px 15px;
-    }
-
-    .project-date {
-        font-size: 14px;
-    }
-
-    .project-description {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .project-category h3 {
-        font-size: 24px;
     }
 
     .project-buttons {
@@ -113,7 +147,7 @@
         padding: 15px 20px;
     }
 
-    /* Competences Section */
+    /* Competences */
     .competence-container {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 25px;
@@ -124,45 +158,15 @@
         height: 140px;
     }
 
-    .skill-icon {
-        font-size: 36px;
-    }
-
-    .skill-java,
-    .skill-python {
-        width: 40px;
-        height: 40px;
-    }
-
-    .skill-percent {
-        font-size: 1.2rem;
-    }
-
-    .skill-name {
-        font-size: 0.7rem;
-    }
-
-    /* Contact Section */
+    /* Contact */
     .rdv-container {
         padding: 30px 20px;
-    }
-
-    .form1 input,
-    .form1 textarea {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-
-    .btn {
-        width: 100%;
-        font-size: 16px;
-        padding: 14px 0;
     }
 }
 
 /* ================== MOBILES (max-width: 768px) ================== */
 @media screen and (max-width: 768px) {
-    /* Hero */
+
     .hero-text h1 {
         font-size: 40px;
     }
@@ -171,15 +175,6 @@
         font-size: 24px;
     }
 
-    .code-icon {
-        font-size: 24px;
-    }
-
-    .hero-buttons {
-        gap: 10px;
-    }
-
-    /* About Section */
     .about-container {
         padding: 0 20px;
     }
@@ -194,20 +189,6 @@
         margin-bottom: 20px;
     }
 
-    .stats {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .stat-number {
-        font-size: 18px;
-    }
-
-    .stat-label {
-        font-size: 13px;
-    }
-
-    /* Projects Section */
     .project-card {
         padding: 30px 15px;
         width: 95%;
@@ -217,22 +198,6 @@
         font-size: 32px;
     }
 
-    .project-description {
-        font-size: 13px;
-    }
-
-    .project-category h3 {
-        font-size: 20px;
-    }
-
-    .btn2-github,
-    .btn2-cv {
-        font-size: 16px;
-        padding: 12px 15px;
-        width: 100%;
-    }
-
-    /* Competences Section */
     .competence-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -243,39 +208,20 @@
         height: 120px;
     }
 
-    .skill-icon {
-        font-size: 32px;
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    .skill-java,
-    .skill-python {
-        width: 36px;
-        height: 36px;
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .skill-percent {
-        font-size: 1.1rem;
-    }
-
-    .skill-name {
-        font-size: 0.65rem;
-    }
-
-    /* Contact Section */
-    .rdv-container {
-        padding: 25px 15px;
-    }
-
-    .form1 input,
-    .form1 textarea {
-        font-size: 13px;
-        padding: 10px;
-    }
-
-    .btn {
-        font-size: 14px;
-        padding: 12px 0;
-        width: 100%;
+    .logo-amien1 {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -286,10 +232,6 @@
     }
 
     .dev-text {
-        font-size: 20px;
-    }
-
-    .code-icon {
         font-size: 20px;
     }
 
@@ -307,10 +249,6 @@
         font-size: 28px;
     }
 
-    .project-description {
-        font-size: 12px;
-    }
-
     .btn2-github,
     .btn2-cv {
         font-size: 14px;
@@ -320,24 +258,6 @@
 
     .skill-card {
         height: 110px;
-    }
-
-    .skill-icon {
-        font-size: 28px;
-    }
-
-    .skill-java,
-    .skill-python {
-        width: 32px;
-        height: 32px;
-    }
-
-    .skill-percent {
-        font-size: 1rem;
-    }
-
-    .skill-name {
-        font-size: 0.6rem;
     }
 }
 
@@ -365,135 +285,7 @@
         font-size: 24px;
     }
 
-    .project-description {
-        font-size: 11px;
-    }
-
-    .btn2-github,
-    .btn2-cv {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    .skill-card {
-        height: 100px;
-    }
-
-    .skill-icon {
-        font-size: 26px;
-    }
-
-    .skill-java,
-    .skill-python {
-        width: 30px;
-        height: 30px;
-    }
-
-    .skill-percent {
-        font-size: 0.9rem;
-    }
-
-    .skill-name {
-        font-size: 0.55rem;
-    }
-
     .rdv-container {
         padding: 15px 10px;
-    }
-
-    .form1 input,
-    .form1 textarea {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .btn {
-        font-size: 12px;
-        padding: 10px 0;
-    }
-}
-
-footer {
-    background-color: var(--premiere-color);
-}
-
-/* CONTAINER PRINCIPAL */
-.footer-content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    width: 100%;
-    padding: 34px 26px;
-    flex-wrap: wrap;
-}
-
-/* Logo */
-.section-logo{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-}
-
-.logo-amien1{
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
-/* Réseaux */
-.social-icons{
-    display: flex;
-    gap: 20px;
-}
-
-/* Copyright */
-.copyright{
-    font-size: 18px;
-    text-align: center;
-}
-
-/* Icônes */
-.social-icons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: var(--deuxieme-color);
-    color: var(--cinquieme-color);
-    font-size: 18px;
-    transition: 0.3s ease;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    transform: scale(1.1);
-}
-
-/* VERSION MOBILE */
-
-@media screen and (max-width: 768px) {
-
-    .footer-content{
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .social-icons{
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .copyright{
-        font-size: 14px;
-    }
-
-    .logo-amien1{
-        width: 60px;
-        height: 60px;
     }
 }

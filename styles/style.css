@@ -12,8 +12,46 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ============ LOADER ============ */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--deuxieme-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* ✅ z-index supérieur à tout */
+    z-index: 99999;
+    color: white;
+    font-size: 18px;
+}
 
-/* Mes putains de Variables */
+/* animation cercle */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #BD1515;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============ VARIABLES ============ */
 :root {
     --premiere-color: #2E2D2D;
     --deuxieme-color: #000000;
@@ -21,9 +59,10 @@ html {
     --quatrieme-color: #BD1515;
     --cinquieme-color: #ffffff;
     --sixieme-color: #1E1E1E;
+    --nav-height: 70px;
 }
 
-/* Body */
+/* ============ BODY ============ */
 body {
     font-family: "Bebas Neue", sans-serif;
     background-color: var(--deuxieme-color);
@@ -31,15 +70,30 @@ body {
     color: var(--cinquieme-color);
 }
 
-/* Header */
+/* ============ HEADER & NAVBAR ============ */
 header {
     background-color: var(--premiere-color);
     padding: 10px 0;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    /* ✅ z-index élevé pour rester au-dessus de tout le contenu */
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    /* ✅ Transition douce pour l'ombre au scroll */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* naviga */
+/* ✅ Ombre ajoutée dynamiquement via JS au scroll */
+header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    background-color: rgba(46, 45, 45, 0.97);
+}
+
+/* Desktop nav */
 .desktop-nav {
     max-width: 1200px;
     margin: auto;
@@ -47,9 +101,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    width: 100%;
 }
 
-/* Logo amien */
+/* Logo */
 .logo-amien {
     width: 50px;
     height: 50px;
@@ -66,10 +121,6 @@ header {
     display: flex;
     list-style: none;
     gap: 40px;
-}
-
-.nav-link li {
-    position: relative;
 }
 
 .nav-link li {
@@ -101,38 +152,23 @@ header {
     width: 100%;
 }
 
-.nav-link li:hover {
-    color: #fff;
+/* ✅ Lien actif dans la nav */
+.nav-link a.active {
+    color: var(--quatrieme-color);
 }
 
-
-/* menu hamburger */
-
+/* ============ MENU HAMBURGER ============ */
 #nav-hamburger {
     display: none;
     justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
 }
-
-#nav-hamburger .hamburger-menu .menu-links #theme-toggle {
-    text-align: center;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    margin-left: 1rem;
-    color: black;
-    transition: color 0.3s ease, transform 0.3s ease
-}
-
-#nav-hamburger .hamburger-menu .menu-links #theme-toggle:hover {
-    transform: scale(1.2);
-}
-
 
 .hamburger-menu {
     position: relative;
     display: inline-block;
-    margin-top: 10px;
 }
 
 .hamburger-icon {
@@ -160,6 +196,8 @@ header {
     max-height: 0;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    /* ✅ z-index suffisant pour passer au-dessus du contenu */
+    z-index: 999;
 }
 
 .menu-links a {
@@ -170,6 +208,11 @@ header {
     color: black;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+}
+
+.menu-links a:hover {
+    background-color: #f0f0f0;
+    color: var(--quatrieme-color);
 }
 
 .menu-links ul li {
@@ -192,31 +235,15 @@ header {
     transform: rotate(-45deg) translate(10px, -5px);
 }
 
-.hamburger-icon span:first-child {
-    transform: none;
-}
+/* ============ HERO ============ */
 
-.hamburger-icon span:first-child {
-    opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-    transform: none;
-}
-
-/* ======ACCEUIL====== */
-
-.acceuil-section {
-    color: white;
-    text-align: center;
-}
-
+/* ✅ padding-top = hauteur de la navbar pour que le contenu ne soit pas masqué */
 .hero {
-    min-height: 60vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 50px;
+    padding: calc(var(--nav-height) + 50px) 50px 50px;
 }
 
 .hero-content {
@@ -263,8 +290,6 @@ header {
     gap: 20px;
 }
 
-
-
 .btn-github {
     padding: 12px 30px;
     border: 2px solid var(--quatrieme-color);
@@ -275,7 +300,9 @@ header {
     font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
 }
 
@@ -295,7 +322,9 @@ header {
     font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
 }
 
@@ -303,8 +332,6 @@ header {
     color: var(--cinquieme-color);
     font-size: 20px;
 }
-
-
 
 .btn-cv:hover {
     background: var(--cinquieme-color);
@@ -319,12 +346,16 @@ header {
     border-radius: 50%;
 }
 
-/* =======A PROPOS====== */
+.profile-circle {
+    position: relative;
+}
 
-.about-section,
-.projets-section {
-    padding: 80px 0;
-    background-color: var(--sixieme-color);
+/* ============ SECTIONS COMMUNES ============ */
+
+/* ✅ Offset pour que les ancres ne soient pas masquées par la navbar fixe */
+section[id],
+h1[id] {
+    scroll-margin-top: var(--nav-height);
 }
 
 .text-title {
@@ -332,6 +363,18 @@ header {
     border-bottom: 5px solid var(--quatrieme-color);
     display: inline-block;
     margin-bottom: 30px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ============ A PROPOS ============ */
+.about-section,
+.projets-section {
+    padding: 80px 0;
+    background-color: var(--sixieme-color);
 }
 
 .about-container {
@@ -346,18 +389,17 @@ header {
     border-radius: 20px;
     height: 200px;
     width: 200px;
+    flex-shrink: 0;
 }
 
 .para-text {
     font-family: 'Roboto Mono';
-    font-optical-sizing: auto;
-    font-weight: regular;
+    font-weight: 400;
     font-style: normal;
     margin-bottom: 40px;
 }
 
-/* statistique */
-
+/* Statistiques */
 .stats {
     display: flex;
     justify-content: space-around;
@@ -373,7 +415,6 @@ header {
 .stat-number {
     font-family: 'Roboto Mono';
     font-size: 22px;
-    font-weight: regular;
     color: #fff;
     margin-bottom: 10px;
 }
@@ -385,7 +426,12 @@ header {
     text-transform: capitalize;
 }
 
-/* =======PROJETS========= */
+/* ============ PROJETS ============ */
+.project-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 .project-card {
     background: var(--premiere-color);
@@ -405,7 +451,6 @@ header {
     flex-wrap: wrap;
     gap: 20px;
 }
-
 
 .project-title-wrapper {
     min-width: 250px;
@@ -479,7 +524,10 @@ header {
     width: 30%;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     cursor: pointer;
 }
 
@@ -500,16 +548,12 @@ header {
     font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     cursor: pointer;
 }
-
-.fa-github {
-    color: var(--cinquieme-color);
-    font-size: 20px;
-}
-
-
 
 .btn2-cv:hover {
     background: var(--cinquieme-color);
@@ -517,20 +561,11 @@ header {
     color: var(--deuxieme-color);
 }
 
-
-/* =====COMPETENCE======*/
-
+/* ============ COMPETENCES ============ */
 .competence-section {
     background: #000;
     padding: 80px 20px;
     text-align: center;
-}
-
-.text-title {
-    color: #fff;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
 }
 
 .competence-container {
@@ -542,33 +577,48 @@ header {
     justify-items: center;
 }
 
-
 .skill-card {
     width: 140px;
     height: 160px;
-    border-radius: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
     cursor: pointer;
 }
 
 .skill-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.05);
     background: #5a5a5a;
+    border-radius: 18px;
 }
-
 
 .skill-icon {
     font-size: 42px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 10px;
     opacity: 0.35;
-    /* effet pâle */
     transition: all 0.3s ease;
 }
 
+.skill-card:hover .skill-icon {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Flask */
+.devicon-flask-original {
+    color: #ffffff;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .devicon-flask-original {
+    opacity: 1;
+    transform: scale(1.15);
+    text-shadow: 0 0 12px #ffffff;
+}
 
 .skill-percent {
     color: #fff;
@@ -583,8 +633,7 @@ header {
     letter-spacing: 1px;
 }
 
-/* ===== COULEURS PALES (NORMAL) ===== */
-
+/* ===== COULEURS ICÔNES ===== */
 .fa-php {
     color: #777BB4;
 }
@@ -605,25 +654,12 @@ header {
     color: #7952b3;
 }
 
-
 .fa-database {
     color: #00758f;
 }
 
-/* ===== HOVER FULL POWER ===== */
-
-.skill-card:hover .skill-icon {
-    opacity: 1;
-    transform: scale(1.15);
-}
-
-/* Glow par techno */
-
-.skill-card:hover .fa-php {
-    text-shadow: 0 0 12px #777BB4;
-}
-
-.skill-java {
+.skill-java,
+.skill-python {
     width: 48px;
     height: 48px;
     opacity: 0.35;
@@ -636,6 +672,16 @@ header {
     filter: drop-shadow(0 0 10px rgba(234, 45, 46, 0.6));
 }
 
+.skill-card:hover .skill-python {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(55, 118, 171, 0.6));
+}
+
+/* Glow par techno */
+.skill-card:hover .fa-php {
+    text-shadow: 0 0 12px #777BB4;
+}
 
 .skill-card:hover .fa-js {
     text-shadow: 0 0 12px #f7df1e;
@@ -653,42 +699,32 @@ header {
     text-shadow: 0 0 12px #7952b3;
 }
 
-/* Python image */
-
-.skill-python {
-    width: 48px;
-    height: 48px;
-    opacity: 0.35;
-    transition: all 0.3s ease;
-}
-
-/* Hover Python */
-
-.skill-card:hover .skill-python {
-    opacity: 1;
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(55, 118, 171, 0.6));
-}
-
-
 .skill-card:hover .fa-database {
     text-shadow: 0 0 12px #00758f;
 }
 
-/* RDV */
+.skill-card:hover .fa-github {
+    text-shadow: 0 0 12px #fff;
+}
 
+.skill-card:hover .fa-git-alt {
+    text-shadow: 0 0 12px #f05032;
+}
+
+/* ============ FORMULAIRE RDV ============ */
 .rdv-section {
     background: var(--sixieme-color);
     width: 100%;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 .rdv-container {
     background: var(--troisieme-color);
     width: 100%;
+    max-width: 700px;
     padding: 40px;
     border-radius: 23px;
 }
@@ -703,13 +739,18 @@ header {
     outline: none;
     font-family: 'Roboto Mono';
     width: 100%;
+    transition: box-shadow 0.2s ease;
+}
+
+.form1 input:focus,
+.form1 textarea:focus {
+    box-shadow: 0 0 0 2px var(--quatrieme-color);
 }
 
 .form1 textarea {
     min-height: 120px;
     resize: vertical;
 }
-
 
 .form1 {
     display: flex;
@@ -721,12 +762,15 @@ header {
 .btn {
     padding: 18px;
     border: none;
-
     background: var(--deuxieme-color);
     color: var(--cinquieme-color);
     font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s ease;
+    border-radius: 8px;
 }
 
 .btn:hover {
@@ -737,13 +781,17 @@ header {
 
 #formMessage {
     margin-top: 15px;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
     display: none;
 }
 
-/* ========FOOTER======= */
+/* ============ FOOTER ============ */
+footer {
+    background-color: var(--premiere-color);
+}
 
 .footer-content {
-    background-color: var(--premiere-color);
     display: flex;
     flex-direction: row-reverse;
     gap: 32px;
@@ -751,10 +799,14 @@ header {
     justify-content: space-around;
     width: 100%;
     padding: 34px 26px;
+    flex-wrap: wrap;
 }
 
 .section-logo {
     background-color: var(--premiere-color);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 .social-icons {
@@ -763,7 +815,9 @@ header {
 }
 
 .copyright {
-    font-size: 24px;
+    font-size: 18px;
+    font-family: 'Roboto Mono';
+    font-size: 14px;
 }
 
 .social-icons a {
@@ -788,7 +842,6 @@ header {
 
 .social-icons a:hover {
     transform: scale(1.1);
-
 }
 
 .social-icons a:nth-child(1):hover {
@@ -799,18 +852,16 @@ header {
     background-color: #E4405F;
 }
 
-.social-icons a:nth-child(4):hover {
-    background-color: #0d3bf0;
-}
-
 .social-icons a:nth-child(3):hover {
     background-color: var(--sixieme-color);
     color: #fff;
+}
+
+.social-icons a:nth-child(4):hover {
+    background-color: #0d3bf0;
 }
 
 .social-icons a:nth-child(5):hover {
     background-color: var(--sixieme-color);
     color: #fff;
 }
-
-
