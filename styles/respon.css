@@ -256,6 +256,10 @@
         width: 100%;
     }
 
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
     .skill-card {
         height: 110px;
     }

@@ -127,3 +127,21 @@ window.addEventListener("scroll", () => {
         header.classList.remove("scrolled");
     }
 });
+
+ setTimeout(() => {
+    document.getElementById('title').classList.add('visible');
+  }, 100);
+
+  // barres s'animent à l'entrée 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80); // stagger
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.skill-box').forEach(el => observer.observe(el));
