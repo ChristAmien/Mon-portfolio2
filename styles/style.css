@@ -67,6 +67,7 @@ body {
     font-family: "Bebas Neue", sans-serif;
     background-color: var(--deuxieme-color);
     text-align: center;
+    overflow-x: hidden;
     color: var(--cinquieme-color);
 }
 
@@ -75,15 +76,14 @@ header {
     background-color: var(--premiere-color);
     padding: 10px 0;
     position: fixed;
+    overflow: visible;
     top: 0;
     left: 0;
     width: 100%;
-    /*z-index élevé pour rester au-dessus de tout le contenu */
     z-index: 1000;
     height: var(--nav-height);
     display: flex;
     align-items: center;
-    /*Transition douce pour l'ombre au scroll */
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -191,13 +191,12 @@ header.scrolled {
     max-height: 0;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
-    /*z-index suffisant pour passer au-dessus du contenu */
     z-index: 999;
 }
 
 .menu-links a {
     display: block;
-    padding: 10px;
+    padding: 10px ;
     text-align: center;
     font-size: 1.5rem;
     color: black;
@@ -205,14 +204,26 @@ header.scrolled {
     transition: all 0.2s ease-in-out;
 }
 
+.menu-links li{
+    list-style: none;
+}
+
 .menu-links a:hover {
     background-color: #f0f0f0;
     color: var(--quatrieme-color);
 }
 
-.menu-links ul li {
-    list-style: none;
+.menu-links ul{
+    list-style:none;
+    padding:0;
+    margin:0;
 }
+
+/* items */
+.menu-links li{
+    border-bottom:1px solid #eee;
+}
+
 
 .menu-links.open {
     max-height: 300px;
@@ -228,6 +239,18 @@ header.scrolled {
 
 .hamburger-icon.open span:last-child {
     transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
 }
 
 /* ============ HERO ============ */
